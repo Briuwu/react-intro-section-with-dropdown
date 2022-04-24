@@ -26,10 +26,10 @@ export default function NavItems({menu}) {
       <li onClick={(e) => handleDropdown(e)} className={features ? "navbar-items features" : "navbar-items"}>
         <a id='features' href="#">Features <span>{features ? <ArrowUp /> : <ArrowDown />}</span></a>
         {features ? <div className='dropdown-features drop'>
-          <div className='dropdown-features-items'><a href="#"><span><Todo /></span>Todo List</a></div>
-          <div className='dropdown-features-items'><a href="#"><span><Calendar /></span>Calendar</a></div>
-          <div className='dropdown-features-items'><a href="#"><span><Reminders /></span>Reminders</a></div>
-          <div className='dropdown-features-items'><a href="#"><span><Planning /></span>Planning</a></div>
+          <div className='dropdown-features-items'><a aria-label="Todo List" href="#"><span><Todo /></span>Todo List</a></div>
+          <div className='dropdown-features-items'><a aria-label="Calendar" href="#"><span><Calendar /></span>Calendar</a></div>
+          <div className='dropdown-features-items'><a aria-label="Reminders" href="#"><span><Reminders /></span>Reminders</a></div>
+          <div className='dropdown-features-items'><a aria-label="Planning" href="#"><span><Planning /></span>Planning</a></div>
         </div> : ""}
       </li>
 
@@ -42,8 +42,8 @@ export default function NavItems({menu}) {
         </div> : ''}
       </li>
 
-      <li className="navbar-items"><a href="#">Careers</a></li>
-      <li className="navbar-items"><a href="#">About</a></li>
+      <li className="navbar-items"><a aria-label="Careers" href="#">Careers</a></li>
+      <li className="navbar-items"><a aria-label="About" href="#">About</a></li>
     </ul>
   )
 }
