@@ -1,0 +1,376 @@
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: 'Epilogue', sans-serif;
+  background-color: #fafafa;
+}
+
+a {
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn {
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn.register {
+  border: 1px solid dimgray;
+  padding: 0.2em 0.85em;
+  border-radius: 0.5em;
+  -webkit-margin-start: 1em;
+          margin-inline-start: 1em;
+}
+
+.header {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  padding: 1em 2em;
+  color: dimgray;
+}
+
+.header_logo {
+  margin-top: 5px;
+  margin-right: 5em;
+}
+
+.header_menu {
+  display: none;
+}
+
+.header_btn {
+  margin-left: auto;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2em;
+}
+
+.drop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1em;
+  position: absolute;
+  font-size: 14px;
+  background-color: #fafafa;
+  padding: 1em;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.dropdown-features {
+  left: 150px;
+  top: 70px;
+}
+
+.dropdown-features-items span {
+  -webkit-margin-end: 1em;
+          margin-inline-end: 1em;
+}
+
+.dropdown-company {
+  left: 370px;
+  top: 70px;
+}
+
+.dropdown-company-items span {
+  -webkit-margin-end: 1em;
+          margin-inline-end: 1em;
+}
+
+.drop > div:hover,
+.navbar-items > a:hover {
+  color: #141414;
+  text-decoration: underline;
+}
+
+.header_btn > button:hover {
+  border-color: #141414;
+  color: #141414;
+}
+
+@media (max-width: 60em) {
+  .header {
+    padding: 1em;
+  }
+  .header_menu {
+    z-index: 9999;
+    display: block;
+    position: absolute;
+    right: 2em;
+  }
+  .header_btn {
+    display: none;
+  }
+  .navbar {
+    position: fixed;
+    inset: 0 0 0 40%;
+    background-color: #fafafa;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5em 2em;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 350ms ease-in;
+    transition: -webkit-transform 350ms ease-in;
+    transition: transform 350ms ease-in;
+    transition: transform 350ms ease-in, -webkit-transform 350ms ease-in;
+  }
+  .navbar.active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: -webkit-transform 350ms ease-out;
+    transition: -webkit-transform 350ms ease-out;
+    transition: transform 350ms ease-out;
+    transition: transform 350ms ease-out, -webkit-transform 350ms ease-out;
+  }
+  .drop {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .dropdown-features {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 0.5em 1.5em;
+  }
+  .dropdown-features-items span {
+    -webkit-margin-end: 1em;
+            margin-inline-end: 1em;
+  }
+  .dropdown-company {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 0.5em 1.5em;
+  }
+  .dropdown-company-items span {
+    -webkit-margin-end: 1em;
+            margin-inline-end: 1em;
+  }
+}
+
+.main {
+  text-align: center;
+}
+
+.main-hero-desktop {
+  display: none;
+}
+
+.main-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+  margin-block: 2em;
+}
+
+.main-paragraph {
+  font-size: 18px;
+  color: dimgray;
+}
+
+.main-btn {
+  font-size: 18px;
+  background-color: #141414;
+  color: #fafafa;
+  border: 1px solid #141414;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  background-color: #fafafa;
+  color: #141414;
+  border-color: #141414;
+}
+
+.footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 1em;
+  margin-inline: 1em;
+}
+
+.grid {
+  max-width: 1440px;
+  margin: auto;
+}
+
+@media (min-width: 60em) {
+  .main-hero-mobile {
+    display: none;
+  }
+  .main-hero-desktop {
+    display: block;
+    height: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 60px;
+        grid-template-rows: 1fr 60px;
+  }
+  .main-hero {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+  }
+  .main-description {
+    -ms-grid-column: 1;
+    grid-column: 1 / 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    margin: auto 0 auto auto;
+    line-height: 1;
+    gap: 2em;
+  }
+  .main-title {
+    font-size: 5rem;
+    text-align: left;
+  }
+  .main-title span::after {
+    content: '\a';
+    white-space: pre;
+  }
+  .main-paragraph {
+    text-align: left;
+    max-width: 544px;
+    padding-right: 5em;
+    line-height: 1.5;
+  }
+  .main-btn {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    padding: 1em;
+  }
+  footer {
+    -ms-grid-column: 1;
+    grid-column: 1 / 1;
+    -ms-grid-row: 2;
+    grid-row: 2 / 2;
+    max-width: 544px;
+    margin-left: auto;
+    margin-right: 1em;
+    margin-top: 1.5em;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

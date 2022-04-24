@@ -1,0 +1,149 @@
+
+.btn {
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn.register {
+  border: 1px solid $medium-gray;
+  padding: 0.2em 0.85em;
+  border-radius: 0.5em;
+  margin-inline-start: 1em;
+}
+
+// HEADER
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: $fz;
+  padding: 1em 2em;
+  color: $medium-gray;
+  
+  // HEADER LOGO
+  &_logo {
+    margin-top: 5px;
+    margin-right: 5em;
+  }
+
+  // HEADER MENU
+  &_menu {
+    display: none;
+  }
+
+  // HEADER BUTTONS
+  &_btn {
+    margin-left: auto;
+  }
+}
+
+
+// NAVBAR
+.navbar {
+  display: flex;
+  gap: 2em;
+}
+
+.drop {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  position: absolute;
+  font-size: 14px;
+  background-color: $almost-white;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.dropdown-features {
+  left: 150px;
+  top: 70px;
+
+  &-items span {
+    margin-inline-end: 1em;
+  }
+}
+
+.dropdown-company {
+  left: 370px;
+  top: 70px;
+
+  &-items span {
+    margin-inline-end: 1em;
+  }
+}
+
+.drop > div:hover,
+.navbar-items > a:hover {
+  color: $almost-black;
+  text-decoration: underline;
+}
+
+.header_btn > button:hover {
+  border-color: $almost-black;
+  color: $almost-black;
+}
+
+@media (max-width: 60em) {
+  .header {
+    padding: 1em;
+  }
+
+  .header_menu {
+    z-index: 9999;
+    display: block;
+    position: absolute;
+    right: 2em;
+  }
+
+  .header_btn {
+    display: none;
+  }
+
+  .navbar {
+    position: fixed;
+    inset: 0 0 0 40%;
+    background-color: $almost-white;
+
+    flex-direction: column;
+    padding: 5em 2em;
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-in;
+  }
+
+  .navbar.active {
+    transform: translateX(0);
+    transition: transform 350ms ease-out;
+  }
+
+  .drop {
+    box-shadow: none;
+  }
+
+  .dropdown-features {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 0.5em 1.5em;
+  
+    &-items span {
+      margin-inline-end: 1em;
+    }
+  }
+
+  .dropdown-company {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 0.5em 1.5em;
+  
+    &-items span {
+      margin-inline-end: 1em;
+    }
+  }
+}

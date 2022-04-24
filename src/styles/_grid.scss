@@ -1,0 +1,67 @@
+.grid {
+  max-width: 1440px;
+  margin: auto;
+}
+
+
+@media (min-width: 60em) {
+  .main-hero-mobile {
+    display: none;
+  }
+
+  .main-hero-desktop {
+    display: block;
+    height: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 60px;
+
+    &-hero {
+      grid-column: 2 / -1;
+      grid-row: 1 / -1;
+    }
+
+    &-description {
+      grid-column: 1 / 1;
+      grid-row: 1 / 2;
+      margin: auto 0 auto auto;
+      line-height: 1;
+      gap: 2em;
+    }
+
+    &-title {
+      font-size: 5rem;
+      text-align: left;
+
+      span::after {
+        content: '\a';
+        white-space: pre;
+      }
+    }
+    &-paragraph {
+      text-align: left;
+      max-width: 544px;
+      padding-right: 5em;
+      line-height: 1.5;
+    }
+
+    &-btn {
+      align-self: flex-start;
+      padding: 1em;
+    }
+  }
+
+  footer {
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+    max-width: 544px;
+    margin-left: auto;
+    margin-right: 1em;
+    margin-top: 1.5em;
+  }
+}

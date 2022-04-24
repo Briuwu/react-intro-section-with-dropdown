@@ -1,0 +1,42 @@
+.main {
+  text-align: center;
+  // CONTAINER FOR HERO IMAGE
+  &-hero {
+
+    // HERO IMAGE FOR DESKTOP
+    &-desktop {
+      display: none;
+    }
+  }
+
+  // MAIN DESCRIPTION
+  &-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-block: 2em;
+  }
+
+  &-paragraph {
+    font-size: $fz;
+    color: $medium-gray;
+  }
+
+  &-btn {
+    font-size: $fz;
+    background-color: $almost-black;
+    color: $almost-white;
+    border: 1px solid $almost-black;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $almost-white;
+      color: $almost-black;
+      border-color: $almost-black;
+    }
+  }
+}
